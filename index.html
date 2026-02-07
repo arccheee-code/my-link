@@ -1,11 +1,88 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hi</title>
-  </head>
-  <body style="font-family: sans-serif; text-align:center; margin-top:40vh;">
-    <h1>hello!</h1>
-    <p>this is just the beginning.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>just one question</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Helvetica Neue", sans-serif;
+      color: #111;
+    }
+
+    .card {
+      text-align: center;
+      padding: 40px;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      max-width: 360px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 0 8px;
+    }
+
+    .yes {
+      background: #111;
+      color: white;
+    }
+
+    .no {
+      background: #e5e5e5;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>so..</h1>
+    <p>will you be my girlfriend again?</p>
+
+    <button class="yes" onclick="yes()">Yes</button>
+    <button class="no" id="no" onmouseover="move()">No</button>
+  </div>
+
+  <script>
+    function yes() {
+      document.body.innerHTML = 
+        <div class="card">
+          <h1>yeaaayy.</h1>
+          <p>its really made my day. Really.</p>
+          ❤️
+        </div>
+      ;
+    }
+
+    function move() {
+      const btn = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+
+</body>
 </html>
