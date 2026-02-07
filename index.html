@@ -1,99 +1,81 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hi</title>
-  </head>
-  <body style="font-family: sans-serif; text-align:center; margin-top:40vh;">
-    <h1>hello </h1>
-    <p>this is just the beginning.</p>
-  </body>
-</html>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>just one question</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Question</title>
+
   <style>
+    
+{
+    box-sizing: border-box;}
+
     body {
       margin: 0;
       height: 100vh;
-      background: #fafafa;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: "Helvetica Neue", sans-serif;
-      color: #111;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
     }
 
     .card {
-      text-align: center;
-      padding: 40px;
-      border-radius: 16px;
       background: white;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-      max-width: 360px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
+      padding: 32px;
+      border-radius: 12px;
+      text-align: center;
+      width: 320px;
     }
 
     button {
-      padding: 12px 24px;
-      font-size: 15px;
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
-      margin: 0 8px;
     }
 
     .yes {
-      background: #111;
-      color: white;
+      background: #000;
+      color: #fff;
     }
 
     .no {
-      background: #e5e5e5;
-      position: absolute;
+      background: #ddd;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>so..</h1>
-    <p>will you be my girlfriend again?</p>
+  <div class="card" id="card">
+    <h2>Hey.</h2>
+    <p>Will you be my girlfriened again?</p>
 
-    <button class="yes" onclick="yes()">Yes</button>
-    <button class="no" id="no" onmouseover="move()">No</button>
+    <button class="yes" id="yesBtn">Yes</button>
+    <button class="no" id="noBtn">No</button>
   </div>
 
   <script>
-    function yes() {
+    document.getElementById("yesBtn").onclick = function () {
       document.body.innerHTML = 
         <div class="card">
-          <h1>yeaaayy.</h1>
-          <p>its really made my day. really.</p>
+          <h2>Okay.</h2>
+          <p>That meant something.</p>
           ❤️
         </div>
       ;
-    }
+    };
 
-    function move() {
-      const btn = document.getElementById("no");
-      const x = Math.random() * (window.innerWidth - 120);
-      const y = Math.random() * (window.innerHeight - 60);
-      btn.style.left = x + "px";
-      btn.style.top = y + "px";
-    }
+    document.getElementById("noBtn").onclick = function () {
+      const card = document.getElementById("card");
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      card.style.transform = translate(${x}px, ${y}px);
+    };
   </script>
 
 </body>
